@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z "$PYCODE" ]; then
+    echo "Error: PYCODE env-variable is not set."
+    exit 1
+fi
+
+if [ ! -f "$PYCODE" ]; then
+    echo "Error: file '$PYCODE' not found."
+    exit 1
+fi
+
+python "$PYCODE"
