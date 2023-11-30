@@ -3,10 +3,10 @@
 if __name__ == "__main__":
     import sys
     argc = len(sys.argv)
-    if argc <= 1:
-        print("0 arguments.")
+    if argc == 1:
+        print("{} arguments.".format(argc - 1))
     elif argc == 2:
-        print("1 argument:")
+        print("{1} argument:".format(argc - 1))
         print("1: {:s}".format(sys.argv[0]))
     else:
         print("{:d} arguments:".format(argc - 1))
