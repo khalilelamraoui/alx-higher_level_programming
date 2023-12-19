@@ -6,27 +6,27 @@ class Node:
     """Node class"""
     def __init__(self, data, next_node=None):
         """Node class initialized"""
-        self.data = data
-        self.next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
     @property
     def data(self):
-        """Data getter"""
+        """data getter"""
         return self.__data
-
+    
     @data.setter
     def data(self, value):
-        """Data setter"""
+        """data setter"""
         self.__data = value
 
     @property
     def next_node(self):
-        """Next node getter"""
+        """next_node getter"""
         return self.__next_node
-
+    
     @next_node.setter
     def next_node(self, value):
-        """Next node setter"""
+        """next_node setter"""
         self.__next_node = value
 
 
