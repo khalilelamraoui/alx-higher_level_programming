@@ -58,11 +58,24 @@ class Square:
 
     def my_print(self):
         """Prints a square with #"""
-        hashTimes = "#" * self.__size
+        hash_times = "#" * self.__size
         if self.__size == 0:
             print()
         else:
             for i in range(0, self.__position[1]):
                 print()
             for i in range(0, self.__size):
-                print(" " * self.__position[0] + hashTimes)
+                print(" " * self.__position[0] + hash_times)
+
+    def __str__(self):
+        """String representation of the square"""
+        result = []
+        hash_times = "#" * self.__size
+        if self.__size == 0:
+            return ""
+        else:
+            for i in range(0, self.__position[1]):
+                result.append("")
+            for i in range(0, self.__size):
+                result.append(" " * self.__position[0] + hash_times)
+            return '\n'.join(result)
