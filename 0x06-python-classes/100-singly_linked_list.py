@@ -56,9 +56,9 @@ class SinglyLinkedList:
 
     def __str__(self):
         """returning the SinglyLinkedList instance"""
+        result = []
         current = self.__head
-        emptySTR = ""
-        while current is not None:
-            emptySTR += str(current.data) + "\n"
+        while current:
+            result.append(str(current.data))
             current = current.next_node
-        return emptySTR[:-1]
+        return '\n'.join(result)
