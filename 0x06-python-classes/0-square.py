@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
+"""Initialized Square class"""
 
 class Square:
-    """Square class with private attribute"""
+    """Empty Square class"""
     pass
