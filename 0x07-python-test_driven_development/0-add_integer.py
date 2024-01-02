@@ -1,12 +1,17 @@
 #!/usr/bin/python3
 """
 This module contains a function that adds 2 integers.
+args:
+a: first integer
+b: second integer
+Returns:
+The addition of a and b.
 """
 
 
 def add_integer(a, b=98):
     """
-    Function to add two integers.
+    add_integer: adds 2 integers
     """
     if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
