@@ -56,3 +56,11 @@ class Rectangle:
             return ""
         else:
             return (("#" * self.__width) + "\n") * self.__height
+
+    def print(self):
+        """Method that prints rectangle with #"""
+        if self.__width == 0 or self.__height == 0:
+            print("")
+        else:
+            for i in range(self.__height):
+                print("#" * self.__width)
