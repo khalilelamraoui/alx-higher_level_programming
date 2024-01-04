@@ -5,16 +5,6 @@
 class Rectangle:
     """Class that defines a rectangle"""
 
-    def __init__(self, width=0, height=0):
-        """Initilization method for Rectangle.
-        Args:
-            width(int): width of rectangle, defaults to 0
-            height(int): height of rectangle, defaults to 0
-        """
-        self.height = height
-        self.width = width
-
-
     @property
     def width(self):
         """Method to get value of width
@@ -68,3 +58,12 @@ class Rectangle:
             raise ValueError("height must be >=0")
 
         self.__height = value
+
+    def __init__(self, width=0, height=0):
+        """Initilization method for Rectangle.
+        Args:
+            width(int): width of rectangle, defaults to 0
+            height(int): height of rectangle, defaults to 0
+        """
+        self.height = height
+        self.width = width
