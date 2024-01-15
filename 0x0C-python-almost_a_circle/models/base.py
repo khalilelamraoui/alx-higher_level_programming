@@ -25,7 +25,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """
@@ -41,7 +41,7 @@ class Base:
             return "[]"
 
         return json.dumps(list_dictionaries)
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -74,7 +74,7 @@ class Base:
             return []
 
         return json.loads(json_string)
-    
+
     @classmethod
     def create(cls, **dictionary):
         """
@@ -91,7 +91,7 @@ class Base:
 
         new.update(**dictionary)
         return new
-    
+
     @classmethod
     def load_from_file(cls):
         """
@@ -109,7 +109,7 @@ class Base:
             pass
 
         return [cls.create(**obj) for obj in list_dicts]
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
@@ -129,7 +129,7 @@ class Base:
                 for obj in list_objs:
                     f.write("{},{},{},{}\n".format(obj.id, obj.size, obj.x,
                                                    obj.y))
-                    
+
     @classmethod
     def load_from_file_csv(cls):
         """
@@ -161,7 +161,7 @@ class Base:
             pass
 
         return [cls.create(**obj) for obj in list_dicts]
-    
+
     @classmethod
     def draw(cls, list_rectangles, list_squares):
         """opens a window and draws all the Rectangles and Squares.

@@ -34,7 +34,7 @@ class Rectangle(Base):
             width (int): width of rectangle
         """
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """
@@ -58,7 +58,7 @@ class Rectangle(Base):
             height (int): height of rectangle
         """
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """
@@ -82,7 +82,7 @@ class Rectangle(Base):
             x (int): x coord of rectangle
         """
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         """
@@ -106,7 +106,7 @@ class Rectangle(Base):
             y (int): y coord of rectangle
         """
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         """
@@ -128,7 +128,7 @@ class Rectangle(Base):
             area (int): area of rectangle
         """
         return self.width * self.height
-    
+
     def display(self):
         """
         display method
@@ -148,7 +148,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
                                                        self.y, self.width,
                                                        self.height)
-    
+
     def update(self, *args, **kwargs):
         """
         update method
@@ -172,7 +172,7 @@ class Rectangle(Base):
         """
         attrs = ["id", "width", "height", "x", "y"]
         return {key: getattr(self, key) for key in attrs}
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """
@@ -186,7 +186,7 @@ class Rectangle(Base):
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -214,7 +214,7 @@ class Rectangle(Base):
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
-    
+
     @classmethod
     def create(cls, **dictionary):
         """
@@ -230,7 +230,7 @@ class Rectangle(Base):
             new = cls(1)
         new.update(**dictionary)
         return new
-    
+
     @classmethod
     def load_from_file(cls):
         """
@@ -244,7 +244,7 @@ class Rectangle(Base):
         except:
             return []
         return [cls.create(**d) for d in list_dicts]
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
@@ -285,7 +285,7 @@ class Rectangle(Base):
         except:
             return []
         return [cls.create(**d) for d in list_dicts]
-    
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         """
@@ -304,8 +304,7 @@ class Rectangle(Base):
         turtle.up()
         turtle.setpos(-200, 200)
         turtle.down()
-        turtle.color("white"
-                        )
+        turtle.color("white")
         turtle.forward(400)
         turtle.right(90)
         turtle.forward(400)
