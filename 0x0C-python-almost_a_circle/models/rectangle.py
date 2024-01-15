@@ -238,11 +238,11 @@ class Rectangle(Base):
         Returns:
             list of instances
         """
-        try:
-            with open(cls.__name__ + ".json", "r") as f:
-                list_dicts = cls.from_json_string(f.read())
-        except:
+        if (cls.__name__ + ".json") is None:
             return []
+        with open(cls.__name__ + ".json", "r") as f:
+            list_dicts = cls.from_json_string(f.read())
+
         return [cls.create(**d) for d in list_dicts]
 
     @classmethod
@@ -273,17 +273,17 @@ class Rectangle(Base):
             list of instances
         """
         import csv
-        try:
-            with open(cls.__name__ + ".csv", "r") as f:
-                if cls.__name__ == "Rectangle":
-                    attrs = ["id", "width", "height", "x", "y"]
-                elif cls.__name__ == "Square":
-                    attrs = ["id", "size", "x", "y"]
-                reader = csv.DictReader(f, fieldnames=attrs)
-                list_dicts = [dict([key, int(value)] for key, value in
-                                   d.items()) for d in reader]
-        except:
+        if (cls.__name__ + ".csv") is None:
             return []
+        with open(cls.__name__ + ".csv", "r") as f:
+            if cls.__name__ == "Rectangle":
+                attrs = ["id", "width", "height", "x", "y"]
+            elif cls.__name__ == "Square":
+                attrs = ["id", "size", "x", "y"]
+            reader = csv.DictReader(f, fieldnames=attrs)
+            list_dicts = [dict([key, int(value)] for key, value in d.items())
+                          for d in reader]
+
         return [cls.create(**d) for d in list_dicts]
 
     @staticmethod
