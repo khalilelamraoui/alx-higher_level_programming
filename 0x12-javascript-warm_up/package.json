@@ -1,7 +1,7 @@
 {
   "name": "my-cool-package",
   "devDependencies": {
-    "semistandard": "*"
+    "semistandard": "^17.0.0"
   },
   "scripts": {
     "test": "semistandard && node my-normal-tests-littered-with-semicolons.js"
