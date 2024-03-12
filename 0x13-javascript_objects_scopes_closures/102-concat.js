@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 const fs = require('fs');
 
 if (process.argv.length >= 5) {

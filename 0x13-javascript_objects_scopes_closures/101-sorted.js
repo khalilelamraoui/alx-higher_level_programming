@@ -1,17 +1,13 @@
 #!/usr/bin/node
-const { dict } = require('./101-data.js').dict;
 
-const totalist = Object.entries(dict);
-const vals = Object.values(dict);
-const valsUniq = [...new Set(vals)];
-const newDict = {};
-for (const j in valsUniq) {
-  const list = [];
-  for (const k in totalist) {
-    if (totalist[k][1] === valsUniq[j]) {
-      list.unshift(totalist[k][0]);
-    }
-  }
-  newDict[valsUniq[j]] = list;
-}
-console.log(newDict);
+const { dict } = require('./101-data');
+
+const convertedArr = Object.entries(dict);
+
+const newObj = {};
+
+convertedArr.forEach(element => {
+  newObj[element[1]] ? newObj[element[1]].push(element[0]) : newObj[element[1]] = [element[0]];
+});
+
+console.log(newObj);
