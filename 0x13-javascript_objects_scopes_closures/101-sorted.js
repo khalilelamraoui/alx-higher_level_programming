@@ -1,5 +1,6 @@
 #!/usr/bin/node
-const dict = require('./101-data').dict;
+const { dict } = require('./101-data.js').dict;
+
 const totalist = Object.entries(dict);
 const vals = Object.values(dict);
 const valsUniq = [...new Set(vals)];
