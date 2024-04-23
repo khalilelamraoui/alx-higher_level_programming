@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* 
+/*
  * This script sends a request to a URL
  * and prints the title of the Star Wars movie
  * with the given ID

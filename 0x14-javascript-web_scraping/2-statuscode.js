@@ -1,6 +1,6 @@
 #!/usr/bin/node
-/* 
- * This script sends a request to a URL 
+/*
+ * This script sends a request to a URL
  * and prints the status code
  */
 
